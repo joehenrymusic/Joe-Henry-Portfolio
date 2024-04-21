@@ -55,12 +55,11 @@
         <ul>
           <li><a class="nav-link active" href="#header">Home</a></li>
           <li><a class="nav-link" href="#about">About</a></li>
-          <!-- <li><a class="nav-link" href="#resume">Resume</a></li> -->
           <li><a class="nav-link" href="#myresume">Resume</a></li>
           <li><a class="nav-link" href="#courses">Courses</a></li>
           <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i id="mobileNavToggle" class="fas fa-bars menuicon"></i>
       </nav>
 
       <div class="social-links">
@@ -330,7 +329,7 @@
           <div class="col-lg-6">
             <p>Check My Resume</p>
           </div>
-          <div class="col-lg-6 text-end">
+          <div class="col-lg-6 cvmob text-end">
             <a href="assets/pdf/joehenrycv.pdf" download="joehenrycv.pdf" target="_blank" class="cv_btn"><i
                 class="fas fa-download"></i>Download CV</a>
           </div>
@@ -534,7 +533,7 @@
 
 
   <section id="courses" class="portfolio">
-    <div class="container cmnpadding">
+    <div class="container cmnpadding" style="position: relative;">
 
       <div class="section-title">
         <h2>Courses</h2>
@@ -752,7 +751,7 @@
 
         <div class="col-md-6  mt-md-0 d-flex align-items-stretch">
           <div class="info-box">
-            <i class="bx bx-share-alt"></i>
+            <i class="fas fa-share-alt sm"></i>
             <h3>Social Profiles</h3>
             <div class="social-links">
               <a href="https://wa.me/917293204486" class="linkedin" target="_blank"><i class="fab fa-whatsapp" style="font-size:20px;"></i></a>
@@ -766,14 +765,14 @@
 
         <div class="col-md-6  d-flex align-items-stretch medenv">
           <div class="info-box">
-            <i class="bx bx-envelope"></i>
+            <i class="fas fa-envelope sm"></i>
             <h3>Email Me</h3>
             <a class="c-a" href="mailto:joehenryworkstation005@gmail.com">joehenryworkstation005@gmail.com</a><br>
           </div>
         </div>
         <div class="col-md-6 mt-4 d-flex align-items-stretch">
           <div class="info-box">
-            <i class="bx bx-phone-call"></i>
+            <i class="fas fa-phone-alt sm"></i>
             <h3>Call Me</h3>
             <a class="c-a" href="tel:+917293204486">+91 729 320 4486</a><br>
           </div>
@@ -784,7 +783,30 @@
     </div>
   </section>
 
+<!-- <script>
+  // Get all the navigation links
+const navLinks = document.querySelectorAll('.nav-link');
 
+// Add click event listener to each navigation link
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    // Remove 'section-show' class from all sections
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.remove('section-show');
+    });
+
+    // Get the target section ID from the href attribute
+    const targetId = this.getAttribute('href').slice(1);
+
+    // Add 'section-show' class to the target section
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.classList.add('section-show');
+    }
+  });
+});
+
+</script> -->
 
 </body>
 
@@ -927,6 +949,46 @@
     var x = document.getElementById("myAudio").autoplay;
     document.getElementById("demo").innerHTML = x;
   }
+</script>
+
+<script>
+ const navbar = document.getElementById('navbar');
+const mobileNavToggle = document.getElementById('mobileNavToggle');
+
+mobileNavToggle.addEventListener('click', function() {
+    navbar.classList.toggle('navbar-mobile');
+    if (navbar.classList.contains('navbar-mobile')) {
+        mobileNavToggle.classList.remove('fas', 'fa-bars');
+        mobileNavToggle.classList.add('far', 'fa-window-close');
+    } else {
+        mobileNavToggle.classList.remove('far', 'fa-window-close');
+        mobileNavToggle.classList.add('fas', 'fa-bars');
+    }
+});
+
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.remove('section-show');
+    });
+
+    const targetId = this.getAttribute('href').slice(1);
+
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.classList.add('section-show');
+      if (navbar.classList.contains('navbar-mobile')) {
+          navbar.classList.remove('navbar-mobile');
+          mobileNavToggle.classList.remove('far', 'fa-window-close');
+          mobileNavToggle.classList.add('fas', 'fa-bars');
+      }
+    }
+  });
+});
+
+
 </script>
 
 
