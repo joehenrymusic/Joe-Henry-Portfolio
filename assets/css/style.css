@@ -48,9 +48,9 @@ body::before {
   display: none;
 }
 
-.sm{
+.sm {
   font-size: 24px;
-  color: #FFC107;
+  color: #ffc107;
   border-radius: 50%;
   padding: 14px;
   float: left;
@@ -82,30 +82,43 @@ body::before {
   #closeNavToggle {
     display: none;
   }
-  .customscroll{
+  .customscroll {
     height: 75vh !important;
   }
   .section-title p {
     font-size: 19px !important;
   }
-  .cvmob{
+  .cvmob {
     text-align: start !important;
   }
   .scrollres {
     height: 69vh !important;
   }
-  .cmnpadding .section-title{
+  .cmnpadding .section-title {
     margin-bottom: 23px !important;
   }
-  .sameline{
+  .sameline {
     display: grid !important;
     min-height: 70vh !important;
     height: 29vh !important;
     overflow-y: auto !important;
   }
- 
+  .guitarbox {
+    max-width: 85% !important;
+  }
+  .guitarcontent {
+    height: 81% !important;
+  }
+  .bullet-points {
+    margin-left: 0px !important;
+  }
 }
 
+
+.pp{
+  font-size: 14px;
+  line-height: 1.3;
+}
 @media (min-width: 1024px) {
   body::before {
     background-attachment: fixed;
@@ -2224,12 +2237,15 @@ body {
 
 .guitarbox {
   width: 100% !important;
-  max-width: 65% !important;
+  max-width: 65%;
+}
+.scrollres {
+  margin-right: -18px !important;
 }
 
 .guitarcontent {
   width: 100% !important;
-  height: 61% !important;
+  height: 61%;
 }
 
 /* cancel design */
