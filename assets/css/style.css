@@ -64,6 +64,9 @@ body::before {
     right: 14%;
     top: 54%;
   }
+  .c-a{
+    word-break: break-all;
+  }
   .menuicon {
     color: #fff;
     font-size: 28px;
